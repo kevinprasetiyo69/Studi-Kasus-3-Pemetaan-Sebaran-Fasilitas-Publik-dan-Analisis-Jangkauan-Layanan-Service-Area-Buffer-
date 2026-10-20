@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a275568abbbf8a2cc47ebbdbc188c7bd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a275568abbbf8a2cc47ebbdbc188c7bd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a275568abbbf8a2cc47ebbdbc188c7bd = L.map(
+                "map_a275568abbbf8a2cc47ebbdbc188c7bd",
+                {
+                    center: [-3.7989, 102.2679],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_44bb8fa20725cad2265a50d6c7032dec = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_44bb8fa20725cad2265a50d6c7032dec.addTo(map_a275568abbbf8a2cc47ebbdbc188c7bd);
+        
+    
+            var circle_5dc3fefb6e45f273dbf2e639b1759d2c = L.circle(
+                [-3.7928, 102.2608],
+                {"bubblingMouseEvents": true, "color": "#0033cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.25, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1000, "stroke": true, "weight": 3}
+            ).addTo(map_a275568abbbf8a2cc47ebbdbc188c7bd);
+        
+    
+            circle_5dc3fefb6e45f273dbf2e639b1759d2c.bindTooltip(
+                `<div>
+                     Radius 1 km: Fasilitas Pusat
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_11a1ef98add347c3a4bb3ff93671e95f = L.marker(
+                [-3.7928, 102.2608],
+                {
+}
+            ).addTo(map_a275568abbbf8a2cc47ebbdbc188c7bd);
+        
+    
+            var icon_a52c2999d2dd4b5d9004ac31d8e2cdc0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_93efccad61df0c506972a084b3190297 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc5ef4bf7e775690907cc4c2335b7b65 = $(`<div id="html_cc5ef4bf7e775690907cc4c2335b7b65" style="width: 100.0%; height: 100.0%;"><b>Fasilitas Pusat</b></div>`)[0];
+                popup_93efccad61df0c506972a084b3190297.setContent(html_cc5ef4bf7e775690907cc4c2335b7b65);
+            
+        
+
+        marker_11a1ef98add347c3a4bb3ff93671e95f.bindPopup(popup_93efccad61df0c506972a084b3190297)
+        ;
+
+        
+    
+    
+                marker_11a1ef98add347c3a4bb3ff93671e95f.setIcon(icon_a52c2999d2dd4b5d9004ac31d8e2cdc0);
+            
+    
+            var circle_aabd45c5c2b9ddc706b305fbc29f8b37 = L.circle(
+                [-3.805, 102.275],
+                {"bubblingMouseEvents": true, "color": "#0033cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.25, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1000, "stroke": true, "weight": 3}
+            ).addTo(map_a275568abbbf8a2cc47ebbdbc188c7bd);
+        
+    
+            circle_aabd45c5c2b9ddc706b305fbc29f8b37.bindTooltip(
+                `<div>
+                     Radius 1 km: Fasilitas Cabang
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7ed85dad12193ae7f2f058cbe4b103aa = L.marker(
+                [-3.805, 102.275],
+                {
+}
+            ).addTo(map_a275568abbbf8a2cc47ebbdbc188c7bd);
+        
+    
+            var icon_f703918dce90e1e7b8449b5c5cd255bf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f0e652568b86d522902d0ed36fcb2101 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_737c5161e02d6973590c20496c114365 = $(`<div id="html_737c5161e02d6973590c20496c114365" style="width: 100.0%; height: 100.0%;"><b>Fasilitas Cabang</b></div>`)[0];
+                popup_f0e652568b86d522902d0ed36fcb2101.setContent(html_737c5161e02d6973590c20496c114365);
+            
+        
+
+        marker_7ed85dad12193ae7f2f058cbe4b103aa.bindPopup(popup_f0e652568b86d522902d0ed36fcb2101)
+        ;
+
+        
+    
+    
+                marker_7ed85dad12193ae7f2f058cbe4b103aa.setIcon(icon_f703918dce90e1e7b8449b5c5cd255bf);
+            
+    
+            var marker_d5a14855998670eaeabc9221e924759e = L.marker(
+                [-3.795, 102.262],
+                {
+}
+            ).addTo(map_a275568abbbf8a2cc47ebbdbc188c7bd);
+        
+    
+            var icon_fcda4f6883f669d4214dad1803f08565 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8345e7617e4cc9c80ff50c7093ca0760 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d637005d351cab7094ad9bec6bda0219 = $(`<div id="html_d637005d351cab7094ad9bec6bda0219" style="width: 100.0%; height: 100.0%;">Area Warga A (Terjangkau)</div>`)[0];
+                popup_8345e7617e4cc9c80ff50c7093ca0760.setContent(html_d637005d351cab7094ad9bec6bda0219);
+            
+        
+
+        marker_d5a14855998670eaeabc9221e924759e.bindPopup(popup_8345e7617e4cc9c80ff50c7093ca0760)
+        ;
+
+        
+    
+    
+                marker_d5a14855998670eaeabc9221e924759e.setIcon(icon_fcda4f6883f669d4214dad1803f08565);
+            
+    
+            var marker_08644d55b6cfde7044cf692793c8d407 = L.marker(
+                [-3.79, 102.258],
+                {
+}
+            ).addTo(map_a275568abbbf8a2cc47ebbdbc188c7bd);
+        
+    
+            var icon_1b62f65f5c941d3ddcfdf248c244df84 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7055025606e9b7e39db33db05e513509 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ce9c9cb0b464897d002659deee3bba3 = $(`<div id="html_8ce9c9cb0b464897d002659deee3bba3" style="width: 100.0%; height: 100.0%;">Area Warga B (Terjangkau)</div>`)[0];
+                popup_7055025606e9b7e39db33db05e513509.setContent(html_8ce9c9cb0b464897d002659deee3bba3);
+            
+        
+
+        marker_08644d55b6cfde7044cf692793c8d407.bindPopup(popup_7055025606e9b7e39db33db05e513509)
+        ;
+
+        
+    
+    
+                marker_08644d55b6cfde7044cf692793c8d407.setIcon(icon_1b62f65f5c941d3ddcfdf248c244df84);
+            
+    
+            var marker_2b14ea5dc7d00698b1ae1b931c709a71 = L.marker(
+                [-3.82, 102.3],
+                {
+}
+            ).addTo(map_a275568abbbf8a2cc47ebbdbc188c7bd);
+        
+    
+            var icon_b2bcb2b0e92465dbc9a9ba759482d3b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ab3d48f04099acadc5399bfac10309ca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2ae28217825e78e20c93c28c36ed36bf = $(`<div id="html_2ae28217825e78e20c93c28c36ed36bf" style="width: 100.0%; height: 100.0%;">Area Warga C (Blank Spot)</div>`)[0];
+                popup_ab3d48f04099acadc5399bfac10309ca.setContent(html_2ae28217825e78e20c93c28c36ed36bf);
+            
+        
+
+        marker_2b14ea5dc7d00698b1ae1b931c709a71.bindPopup(popup_ab3d48f04099acadc5399bfac10309ca)
+        ;
+
+        
+    
+    
+                marker_2b14ea5dc7d00698b1ae1b931c709a71.setIcon(icon_b2bcb2b0e92465dbc9a9ba759482d3b1);
+            
+    
+            var marker_62ec71ee68f1dfe33a9c98a64d719b6b = L.marker(
+                [-3.802, 102.271],
+                {
+}
+            ).addTo(map_a275568abbbf8a2cc47ebbdbc188c7bd);
+        
+    
+            var icon_457b83804a1e4a90f2c3eef2c1c540e8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c058a5602756a5d6fc95ac108cdf195d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fd03b8bc0fab5a18592eaf6604bc1b42 = $(`<div id="html_fd03b8bc0fab5a18592eaf6604bc1b42" style="width: 100.0%; height: 100.0%;">Area Warga D (Terjangkau)</div>`)[0];
+                popup_c058a5602756a5d6fc95ac108cdf195d.setContent(html_fd03b8bc0fab5a18592eaf6604bc1b42);
+            
+        
+
+        marker_62ec71ee68f1dfe33a9c98a64d719b6b.bindPopup(popup_c058a5602756a5d6fc95ac108cdf195d)
+        ;
+
+        
+    
+    
+                marker_62ec71ee68f1dfe33a9c98a64d719b6b.setIcon(icon_457b83804a1e4a90f2c3eef2c1c540e8);
+            
+</script>
+</html>
