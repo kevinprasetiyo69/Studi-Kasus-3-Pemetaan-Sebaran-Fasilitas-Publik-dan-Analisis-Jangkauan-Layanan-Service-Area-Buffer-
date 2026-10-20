@@ -1,2 +1,2 @@
-# Studi-Kasus-3-Pemetaan-Sebaran-Fasilitas-Publik-dan-Analisis-Jangkauan-Layanan-Service-Area-Buffer-
+# Studi Kasus 3 Pemetaan Sebaran Fasilitas Publik dan Analisis Jangkauan Layanan Service Area Buffer 
 Proyek ini mengimplementasikan analisis spasial sederhana menggunakan Python (GeoPandas) untuk memetakan lokasi fasilitas publik (misalnya rumah sakit atau minimarket) serta mengidentifikasi area yang terlayani dan titik permukiman warga yang belum terjangkau (blank spot) dalam radius 1 km, kemudian menyajikannya ke peta interaktif WebGIS.
