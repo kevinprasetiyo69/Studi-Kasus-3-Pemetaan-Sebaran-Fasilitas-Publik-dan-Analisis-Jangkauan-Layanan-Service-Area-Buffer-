@@ -3,10 +3,6 @@ import geopandas as gpd
 import pandas as pd
 from shapely.geometry import Point
 
-# ==============================================================================
-# 1. PERSIAPAN DATA TITIK KOORDINAT (Fasilitas & Lokasi Warga)
-# ==============================================================================
-# Titik fasilitas layanan (misal: fasilitas kesehatan / ritel)
 data_facilities = {
     'facility_id': ['FAS-01', 'FAS-02'],
     'name': ['Fasilitas Pusat', 'Fasilitas Cabang'],
@@ -20,7 +16,6 @@ gdf_fac = gpd.GeoDataFrame(
     crs='EPSG:4326',
 )
 
-# Titik permukiman warga/konsumen
 data_residents = {
     'resident_id': ['R-01', 'R-02', 'R-03', 'R-04'],
     'resident_name': ['Area Warga A', 'Area Warga B', 'Area Warga C', 'Area Warga D'],
@@ -34,18 +29,12 @@ gdf_res = gpd.GeoDataFrame(
     crs='EPSG:4326',
 )
 
-# ==============================================================================
-# 2. ANALISIS BUFFER 1 KM (Ubah CRS ke Meter)
-# ==============================================================================
-# Proyeksi ke UTM (EPSG:32748) agar satuan jarak akurat dalam meter
 gdf_fac_utm = gdf_fac.to_crs('EPSG:32748')
 gdf_res_utm = gdf_res.to_crs('EPSG:32748')
 
-# Buat area buffer 1.000 meter (1 km)
 gdf_fac_utm['buffer_1km'] = gdf_fac_utm.geometry.buffer(1000)
 gdf_buffer = gdf_fac_utm.set_geometry('buffer_1km')
 
-# Spatial Join: Cek warga mana yang berada di dalam jangkauan
 joined = gpd.sjoin(gdf_res_utm, gdf_buffer, predicate='within', how='left')
 terlayani_ids = joined[joined['facility_id'].notnull()]['resident_id'].unique()
 
@@ -54,15 +43,10 @@ for _, row in gdf_res.iterrows():
   status = 'Terjangkau' if row['resident_id'] in terlayani_ids else 'Di Luar Radius (Blank Spot)'
   print(f"{row['resident_name']}: {status}")
 
-# ==============================================================================
-# 3. EXPORT KE WEBGIS INTERAKTIF (Folium / HTML)
-# ==============================================================================
-# Kembalikan koordinat buffer ke EPSG:4326 (Lat/Long) untuk WebGIS
 gdf_buffer_wgs = gdf_buffer.to_crs('EPSG:4326')
 
 peta = folium.Map(location=[-3.7989, 102.2679], zoom_start=13)
 
-# Tampilkan Buffer 1 KM
 folium.GeoJson(
     gdf_buffer_wgs,
     style_function=lambda x: {
@@ -74,7 +58,6 @@ folium.GeoJson(
     tooltip=folium.GeoJsonTooltip(fields=['name'], aliases=['Layanan:']),
 ).add_to(peta)
 
-# Tampilkan Marker Fasilitas (Warna Biru)
 for _, row in gdf_fac.iterrows():
   folium.Marker(
       location=[row['latitude'], row['longitude']],
@@ -82,7 +65,6 @@ for _, row in gdf_fac.iterrows():
       icon=folium.Icon(color='blue', icon='info-sign'),
   ).add_to(peta)
 
-# Tampilkan Marker Warga (Hijau jika terjangkau, Merah jika blank spot)
 for _, row in gdf_res.iterrows():
   is_covered = row['resident_id'] in terlayani_ids
   color = 'green' if is_covered else 'red'
